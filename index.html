@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>William&#8217;s Stag Do</title>
+<meta name="description" content="Weekend itinerary for William&#8217;s stag do &#8212; York, 2&#8211;4 April 2027.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ground:#F6F1E6;
+    --surface:#FFFDF8;
+    --ink:#20291F;
+    --ink-muted:#5B6653;
+    --accent:#AD7A28;
+    --accent-ink:#5C3E12;
+    --forest:#2F5233;
+    --forest-soft:#E7EEE1;
+    --brick:#A6432F;
+    --brick-soft:#F3E2DC;
+    --line:#DED2B4;
+    --shadow: 0 1px 0 rgba(32,41,31,0.06);
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#141F17;
+      --surface:#1A251C;
+      --ink:#EEE7D4;
+      --ink-muted:#A9B39E;
+      --accent:#E0AC4E;
+      --accent-ink:#2A1C08;
+      --forest:#7CAE84;
+      --forest-soft:#20301F;
+      --brick:#D98368;
+      --brick-soft:#3A241D;
+      --line:#33422F;
+      --shadow: 0 1px 0 rgba(0,0,0,0.3);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#141F17;
+    --surface:#1A251C;
+    --ink:#EEE7D4;
+    --ink-muted:#A9B39E;
+    --accent:#E0AC4E;
+    --accent-ink:#2A1C08;
+    --forest:#7CAE84;
+    --forest-soft:#20301F;
+    --brick:#D98368;
+    --brick-soft:#3A241D;
+    --line:#33422F;
+    --shadow: 0 1px 0 rgba(0,0,0,0.3);
+    color-scheme: dark;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ animation-duration:0.001ms !important; transition-duration:0.001ms !important; }
+  }
+
+  body{
+    margin:0;
+    background:var(--ground);
+    color:var(--ink);
+    font-family:'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{
+    max-width:800px;
+    margin:0 auto;
+    padding-inline:20px;
+  }
+
+  a{ color:var(--forest); }
+
+  h1,h2,h3{
+    font-family:'Fraunces', Georgia, serif;
+    text-wrap:balance;
+    margin:0;
+    color:var(--ink);
+  }
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    font-size:0.72rem;
+    color:var(--accent-ink);
+    background:var(--accent);
+    display:inline-block;
+    padding:0.3em 0.7em;
+    border-radius:3px;
+    font-weight:600;
+  }
+  :root[data-theme="dark"] .eyebrow, @supports(color: color-mix(in srgb, red, red)){}
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]) .eyebrow{ color:var(--accent-ink); }
+  }
+
+  /* ---------- nav ---------- */
+  .mininav{
+    position:sticky;
+    top:0;
+    z-index:20;
+    background:var(--ground);
+    border-bottom:1px solid var(--line);
+  }
+  .mininav .wrap{
+    display:flex;
+    gap:4px;
+    overflow-x:auto;
+    padding-block:10px;
+    scrollbar-width:none;
+  }
+  .mininav .wrap::-webkit-scrollbar{ display:none; }
+  .mininav a{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    letter-spacing:0.04em;
+    text-decoration:none;
+    color:var(--ink-muted);
+    white-space:nowrap;
+    padding:6px 12px;
+    border-radius:999px;
+    border:1px solid transparent;
+  }
+  .mininav a:hover, .mininav a:focus-visible{
+    color:var(--ink);
+    border-color:var(--line);
+    background:var(--surface);
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    padding-block:56px 40px;
+    overflow:hidden;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-art{
+    position:absolute;
+    right:-40px;
+    top:-10px;
+    width:280px;
+    max-width:46vw;
+    opacity:0.14;
+    color:var(--forest);
+    pointer-events:none;
+  }
+  .hero-inner{ position:relative; }
+  .hero h1{
+    font-size:clamp(2.3rem, 7vw, 3.6rem);
+    line-height:1.03;
+    margin-block:14px 10px;
+    font-weight:600;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--forest);
+  }
+  .hero p.lede{
+    font-size:1.05rem;
+    color:var(--ink-muted);
+    max-width:46ch;
+    margin:0 0 28px;
+  }
+
+  .countdown{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+  .countdown .box{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:10px 16px;
+    min-width:74px;
+    text-align:center;
+    box-shadow:var(--shadow);
+  }
+  .countdown .box strong{
+    display:block;
+    font-family:'IBM Plex Mono', monospace;
+    font-variant-numeric: tabular-nums;
+    font-size:1.5rem;
+    font-weight:600;
+    color:var(--forest);
+  }
+  .countdown .box span{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.62rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--ink-muted);
+  }
+
+  /* ---------- facts strip ---------- */
+  .facts{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    border-bottom:1px solid var(--line);
+  }
+  .facts .fact{
+    padding:16px 14px;
+    border-left:1px solid var(--line);
+  }
+  .facts .fact:first-child{ border-left:none; }
+  .facts .fact .k{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.65rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--ink-muted);
+    display:block;
+    margin-bottom:4px;
+  }
+  .facts .fact .v{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:1.05rem;
+  }
+  @media (max-width:620px){
+    .facts{ grid-template-columns:repeat(2, 1fr); }
+    .facts .fact:nth-child(3){ border-left:none; }
+  }
+
+  /* ---------- sections ---------- */
+  section.block{
+    padding-block:44px;
+    border-bottom:1px solid var(--line);
+  }
+  .block-head{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:16px;
+    margin-bottom:22px;
+    flex-wrap:wrap;
+  }
+  .block-head h2{
+    font-size:1.7rem;
+    font-weight:600;
+  }
+  .block-head .date-num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.85rem;
+    color:var(--ink-muted);
+    letter-spacing:0.02em;
+  }
+  .note{
+    font-size:0.92rem;
+    color:var(--ink-muted);
+    margin:-8px 0 24px;
+  }
+
+  /* ---------- schedule list ---------- */
+  ol.schedule{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+  }
+  ol.schedule li{
+    display:grid;
+    grid-template-columns:70px 1fr;
+    gap:16px;
+    padding-block:16px;
+    border-top:1px solid var(--line);
+  }
+  ol.schedule li:first-child{ border-top:none; }
+  ol.schedule time{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.85rem;
+    font-variant-numeric: tabular-nums;
+    color:var(--forest);
+    padding-top:2px;
+  }
+  ol.schedule h3{
+    font-size:1.05rem;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    flex-wrap:wrap;
+    font-family:'Public Sans', sans-serif;
+  }
+  ol.schedule p{
+    margin:4px 0 0;
+    color:var(--ink-muted);
+    font-size:0.95rem;
+  }
+
+  .pill{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.62rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    padding:2px 8px;
+    border-radius:999px;
+    font-weight:600;
+  }
+  .pill.tbc{ background:var(--brick-soft); color:var(--brick); }
+  .pill.set{ background:var(--forest-soft); color:var(--forest); }
+  .pill.opt{ background:var(--surface); color:var(--ink-muted); border:1px solid var(--line); }
+
+  /* ---------- stay stub ---------- */
+  .stub{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:26px 24px;
+    position:relative;
+    box-shadow:var(--shadow);
+  }
+  .stub::before, .stub::after{
+    content:"";
+    position:absolute;
+    width:18px; height:18px;
+    background:var(--ground);
+    border:1px solid var(--line);
+    border-radius:50%;
+    top:50%;
+    transform:translateY(-50%);
+  }
+  .stub::before{ left:-10px; }
+  .stub::after{ right:-10px; }
+  .stub .k{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.65rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--ink-muted);
+  }
+  .stub h3{
+    font-size:1.35rem;
+    margin:6px 0 4px;
+  }
+  .stub .addr{
+    color:var(--ink-muted);
+    margin:0 0 18px;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.8rem;
+    font-weight:600;
+    letter-spacing:0.03em;
+    text-decoration:none;
+    color:var(--surface);
+    background:var(--forest);
+    padding:10px 18px;
+    border-radius:6px;
+  }
+  .btn:hover{ opacity:0.9; }
+
+  /* ---------- checklist ---------- */
+  ul.kit{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:2px 20px;
+  }
+  ul.kit li{
+    border-top:1px solid var(--line);
+  }
+  ul.kit li:nth-last-child(-n+2){ }
+  ul.kit label{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    padding-block:12px;
+    cursor:pointer;
+    font-size:0.95rem;
+  }
+  ul.kit input{
+    margin-top:4px;
+    width:16px; height:16px;
+    accent-color:var(--forest);
+    flex-shrink:0;
+  }
+  ul.kit input:checked ~ span{
+    color:var(--ink-muted);
+    text-decoration:line-through;
+  }
+  @media (max-width:560px){
+    ul.kit{ grid-template-columns:1fr; }
+  }
+
+  /* ---------- logistics ---------- */
+  .logi{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+  }
+  .logi .card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:20px;
+  }
+  .logi .card h3{
+    font-size:1rem;
+    margin-bottom:8px;
+  }
+  .logi .card p{
+    margin:0;
+    color:var(--ink-muted);
+    font-size:0.92rem;
+  }
+  @media (max-width:560px){
+    .logi{ grid-template-columns:1fr; }
+  }
+
+  footer{
+    padding-block:40px 60px;
+    text-align:center;
+  }
+  footer p.sign{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:1.2rem;
+    margin:0 0 8px;
+  }
+  footer p.small{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.04em;
+    color:var(--ink-muted);
+    margin:0;
+  }
+
+  .reveal{
+    opacity:0;
+    transform:translateY(10px);
+    transition:opacity 0.5s ease, transform 0.5s ease;
+  }
+  .reveal.in{
+    opacity:1;
+    transform:none;
+  }
+</style>
+</head>
+<body>
+
+<nav class="mininav" aria-label="Section navigation">
+  <div class="wrap">
+    <a href="#fri">FRI 02</a>
+    <a href="#sat">SAT 03</a>
+    <a href="#sun">SUN 04</a>
+    <a href="#stay">STAY</a>
+    <a href="#kit">KIT LIST</a>
+    <a href="#info">INFO</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <svg class="hero-art" viewBox="0 0 200 220" fill="none" aria-hidden="true">
+    <rect x="20" y="70" width="34" height="130" fill="currentColor"/>
+    <rect x="146" y="70" width="34" height="130" fill="currentColor"/>
+    <rect x="70" y="40" width="60" height="160" fill="currentColor"/>
+    <polygon points="20,70 37,50 54,70" fill="currentColor"/>
+    <polygon points="146,70 163,50 180,70" fill="currentColor"/>
+    <polygon points="70,40 100,10 130,40" fill="currentColor"/>
+    <rect x="10" y="196" width="180" height="8" fill="currentColor"/>
+    <rect x="26" y="90" width="8" height="14" fill="var(--ground)"/>
+    <rect x="40" y="90" width="8" height="14" fill="var(--ground)"/>
+    <rect x="152" y="90" width="8" height="14" fill="var(--ground)"/>
+    <rect x="166" y="90" width="8" height="14" fill="var(--ground)"/>
+    <rect x="90" y="70" width="20" height="34" fill="var(--ground)"/>
+  </svg>
+  <div class="wrap hero-inner">
+    <span class="eyebrow">York &middot; Friday 2&ndash;Sunday 4 April 2027</span>
+    <h1>William&#8217;s <em>Stag Do</em></h1>
+    <p class="lede">Nineteen of us, one groom, three days in York. Golf, a private chef, and however the rest of the weekend wants to go. Here&#8217;s the plan so far &#8212; check back, it&#8217;ll fill in as things get confirmed.</p>
+    <div class="countdown" id="countdown" aria-live="polite">
+      <div class="box"><strong id="cd-days">&ndash;</strong><span>Days</span></div>
+      <div class="box"><strong id="cd-hours">&ndash;</strong><span>Hours</span></div>
+      <div class="box"><strong id="cd-mins">&ndash;</strong><span>Mins</span></div>
+      <div class="box"><strong id="cd-secs">&ndash;</strong><span>Secs</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="facts">
+  <div class="fact"><span class="k">Location</span><span class="v">York, England</span></div>
+  <div class="fact"><span class="k">Dates</span><span class="v">2&ndash;4 Apr 2027</span></div>
+  <div class="fact"><span class="k">Headcount</span><span class="v">19, incl. William</span></div>
+  <div class="fact"><span class="k">HQ</span><span class="v">Villa Farm</span></div>
+</div>
+
+<main class="wrap">
+
+  <section class="block reveal" id="fri">
+    <div class="block-head">
+      <h2>Friday <span class="date-num">02.04</span></h2>
+      <span class="pill opt">Arrivals &amp; golf day</span>
+    </div>
+    <ol class="schedule">
+      <li>
+        <time>From 14:00</time>
+        <div>
+          <h3>Check-in at Villa Farm <span class="pill set">Confirmed</span></h3>
+          <p>Get yourselves to YO32 2RH, drop the bags, first can open.</p>
+        </div>
+      </li>
+      <li>
+        <time>Afternoon</time>
+        <div>
+          <h3>Golf, for those playing <span class="pill tbc">Course TBC</span></h3>
+          <p>Optional &#8212; no pressure on the non-golfers. Tee time and course to follow once booked.</p>
+        </div>
+      </li>
+      <li>
+        <time>19:00</time>
+        <div>
+          <h3>Private chef at the villa <span class="pill set">Confirmed</span></h3>
+          <p>Dinner cooked for the group back at Villa Farm &#8212; menu and dietary requirements to be collected nearer the time.</p>
+        </div>
+      </li>
+      <li>
+        <time>21:30</time>
+        <div>
+          <h3>Weir Social <span class="pill set">Confirmed</span></h3>
+          <p>Drinks and a proper catch-up to kick the weekend off.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="block reveal" id="sat">
+    <div class="block-head">
+      <h2>Saturday <span class="date-num">03.04</span></h2>
+      <span class="pill opt">Activity &amp; night out</span>
+    </div>
+    <ol class="schedule">
+      <li>
+        <time>Morning</time>
+        <div>
+          <h3>Breakfast &amp; recover <span class="pill set">Confirmed</span></h3>
+          <p>Back at the villa &#8212; sort yourselves out before the day gets going.</p>
+        </div>
+      </li>
+      <li>
+        <time>Daytime</time>
+        <div>
+          <h3>Group activity <span class="pill tbc">TBC</span></h3>
+          <p>Still being nailed down &#8212; details land here as soon as it&#8217;s booked.</p>
+        </div>
+      </li>
+      <li>
+        <time>Evening</time>
+        <div>
+          <h3>Dinner in town <span class="pill tbc">Restaurant TBC</span></h3>
+          <p>Heading into York city centre to eat before the night out.</p>
+        </div>
+      </li>
+      <li>
+        <time>Late</time>
+        <div>
+          <h3>Bars in York <span class="pill tbc">TBC</span></h3>
+          <p>A few of York&#8217;s finest, in whatever order the night decides.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="block reveal" id="sun">
+    <div class="block-head">
+      <h2>Sunday <span class="date-num">04.04</span></h2>
+      <span class="pill opt">Home time</span>
+    </div>
+    <ol class="schedule">
+      <li>
+        <time>Morning</time>
+        <div>
+          <h3>Breakfast &amp; painkillers <span class="pill set">Confirmed</span></h3>
+          <p>Rehydrate, rehash last night, find your phone.</p>
+        </div>
+      </li>
+      <li>
+        <time>By 11:00</time>
+        <div>
+          <h3>Check-out &amp; departure <span class="pill opt">Guide time</span></h3>
+          <p>Pack up and head home &#8212; exact check-out time to be confirmed with Villa Farm.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="block reveal" id="stay">
+    <div class="block-head"><h2>Where we&#8217;re staying</h2></div>
+    <div class="stub">
+      <span class="k">HQ for the weekend</span>
+      <h3>Villa Farm &#8212; Holiday Cottages</h3>
+      <p class="addr">York, England &middot; YO32 2RH</p>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Villa+Farm+Holiday+Cottages+York+YO32+2RH" target="_blank" rel="noopener">Open in Maps &nbsp;&#8594;</a>
+    </div>
+  </section>
+
+  <section class="block reveal" id="kit">
+    <div class="block-head"><h2>What to bring</h2></div>
+    <p class="note">Tick these off before you leave &#8212; ticks are saved on your own phone, no one else sees them.</p>
+    <ul class="kit" id="kit-list">
+      <li><label><input type="checkbox" id="kit-1"><span>Golf clubs &amp; shoes, if you&#8217;re playing Friday</span></label></li>
+      <li><label><input type="checkbox" id="kit-2"><span>Smart-casual outfit for Saturday dinner</span></label></li>
+      <li><label><input type="checkbox" id="kit-3"><span>Comfortable shoes for a night on your feet</span></label></li>
+      <li><label><input type="checkbox" id="kit-4"><span>Cash or card for the kitty &amp; bars</span></label></li>
+      <li><label><input type="checkbox" id="kit-5"><span>Photo ID, for anywhere fussy about it</span></label></li>
+      <li><label><input type="checkbox" id="kit-6"><span>Painkillers &amp; hangover kit</span></label></li>
+      <li><label><input type="checkbox" id="kit-7"><span>A layer &#8212; April in Yorkshire can do sun and sideways rain in the same hour</span></label></li>
+      <li><label><input type="checkbox" id="kit-8"><span>Phone charger</span></label></li>
+    </ul>
+  </section>
+
+  <section class="block reveal" id="info" style="border-bottom:none;">
+    <div class="block-head"><h2>Good to know</h2></div>
+    <div class="logi">
+      <div class="card">
+        <h3>Latest updates</h3>
+        <p>This page will be kept up to date as the TBCs get locked in &#8212; the golf course, Saturday&#8217;s activity, and the restaurant. Worth a re-check closer to the date.</p>
+      </div>
+      <div class="card">
+        <h3>Questions</h3>
+        <p>Anything you need to know that isn&#8217;t here yet &#8212; drop it in the group chat and it&#8217;ll get answered (and probably added to this page).</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p class="sign">See you in York.</p>
+  <p class="small">WILLIAM&#8217;S STAG DO &middot; 2&ndash;4 APRIL 2027</p>
+</footer>
+
+<script>
+  (function(){
+    var target = new Date("2027-04-02T14:00:00+01:00").getTime();
+    var elD = document.getElementById('cd-days');
+    var elH = document.getElementById('cd-hours');
+    var elM = document.getElementById('cd-mins');
+    var elS = document.getElementById('cd-secs');
+    function tick(){
+      var now = Date.now();
+      var diff = target - now;
+      if (diff <= 0){
+        elD.textContent = elH.textContent = elM.textContent = elS.textContent = '0';
+        return;
+      }
+      var s = Math.floor(diff / 1000);
+      var days = Math.floor(s / 86400);
+      var hours = Math.floor((s % 86400) / 3600);
+      var mins = Math.floor((s % 3600) / 60);
+      var secs = s % 60;
+      elD.textContent = days;
+      elH.textContent = String(hours).padStart(2,'0');
+      elM.textContent = String(mins).padStart(2,'0');
+      elS.textContent = String(secs).padStart(2,'0');
+    }
+    tick();
+    setInterval(tick, 1000);
+  })();
+
+  (function(){
+    try {
+      var boxes = document.querySelectorAll('#kit-list input[type="checkbox"]');
+      boxes.forEach(function(box){
+        var saved = localStorage.getItem('stag-kit-' + box.id);
+        if (saved === '1') box.checked = true;
+        box.addEventListener('change', function(){
+          try { localStorage.setItem('stag-kit-' + box.id, box.checked ? '1' : '0'); } catch(e){}
+        });
+      });
+    } catch(e){}
+  })();
+
+  (function(){
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var items = document.querySelectorAll('.reveal');
+    if (reduced || !('IntersectionObserver' in window)){
+      items.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting){
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    items.forEach(function(el){ io.observe(el); });
+  })();
+</script>
+
+</body>
+</html>
